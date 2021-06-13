@@ -39,7 +39,7 @@ describe("deepClone", () => {
       },
     });
   });
-  
+
   it("clone an array", () => {
     const a = [
       {
@@ -82,5 +82,14 @@ describe("deepClone", () => {
         },
       },
     ]);
+  });
+  
+  it("still work with something else", () => {
+    expect(deepClone(null)).toEqual(null);
+    expect(deepClone(undefined)).toEqual(undefined);
+    expect(deepClone("string")).toEqual("string");
+    expect(deepClone(10)).toEqual(10);
+    expect(deepClone(true)).toEqual(true);
+    expect(deepClone(false)).toEqual(false);
   });
 });
