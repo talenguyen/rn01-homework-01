@@ -9,7 +9,13 @@ const cloneObject = (object) => {
   }, {});
 };
 
+const cloneArray = (array) => array.map(cloneObject);
+
 const deepClone = (target) => {
+  if (Array.isArray(target)) {
+    return cloneArray(target);
+  }
+  
   if (isObject(target)) {
     return cloneObject(target);
   }
