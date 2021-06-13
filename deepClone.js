@@ -1,5 +1,5 @@
 const deepClone = (target) => {
-  return target;
+  return { ...target };
 };
 
 module.exports = deepClone;
