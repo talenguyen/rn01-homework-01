@@ -35,5 +35,11 @@ describe("isEqual", () => {
       },
     };
     expect(isEqual(a, c)).toBe(false);
+
+    const d = {
+      name: "Giang"
+    };
+
+    expect(isEqual(a, d)).toBe(false);
   });
 });
