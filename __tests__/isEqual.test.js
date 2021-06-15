@@ -77,7 +77,6 @@ describe("isEqual", () => {
     expect(isEqual(a, c)).toBe(false);
   });
 
-
   it("compare diff length arrays", () => {
     const a = [
       {
@@ -102,8 +101,23 @@ describe("isEqual", () => {
           street: "12 Nguyen Thong, Ward 9, District 3",
           city: "Ho Chi Minh",
         },
-      }
+      },
     ];
     expect(isEqual(a, b)).toBe(false);
+  });
+
+  it("still work with other types", () => {
+    expect(isEqual(null, null)).toBe(true);
+    expect(isEqual(null, "null")).toBe(false);
+    expect(isEqual(undefined, undefined)).toBe(true);
+    expect(isEqual(undefined, "undefined")).toBe(false);
+    expect(isEqual("string", "string")).toBe(true);
+    expect(isEqual("string", "other string")).toBe(false);
+    expect(isEqual(10, 10)).toBe(true);
+    expect(isEqual(10, 20)).toBe(false);
+    expect(isEqual(true, false)).toBe(false);
+    expect(isEqual(false, false)).toBe(true);
+    expect(isEqual(true, true)).toBe(true);
+    expect(isEqual({}, false)).toBe(false);
   });
 });
