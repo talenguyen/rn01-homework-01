@@ -15,7 +15,7 @@ const isObjectEqual = (subject1, subject2) => {
 };
 
 const isEqual = (subject1, subject2) => {
-  if (isObject(subject1)) {  
+  if (isObject(subject1)) {
     return isObject(subject2) && isObjectEqual(subject1, subject2);
   }
 
